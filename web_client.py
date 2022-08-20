@@ -21,14 +21,6 @@ rest = hikari.RESTApp()
 
 URL = f"https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&redirect_uri={urllib.parse.quote(REDIRECT_URI)}&response_type=code&scope=identify%20guilds"
 
-def random_str(length: int) -> str:
-    text = ""
-    possible = list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
-    for _ in range(length):
-        index = random.randint(0, len(possible)-1)
-        text += possible[index]
-
-    return text
 
 @app.route("/")
 async def index():
@@ -36,7 +28,7 @@ async def index():
 
 @app.route("/login", methods=["GET"])
 async def login():
-    state = random_str(16)
+    state = os.urandom(16).hex()
     session["state"] = state
 
     return quart.redirect(f"{URL}&state={state}")
