@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+.env
+client.py
+req.py
+test.html
+token.json

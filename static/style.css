@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2c2f33;
+    color: #fff;
+    font-family: 'JetBrains Mono';
+    margin: 0;
+    padding: 0;
+}
+
+div.header {
+    width: 100%;
+    background-color: #363940;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 60px;
+}
+
+div.header div.title {
+    margin-left: 15px;
+}
+
+div.header div.right {
+    margin-right: 15px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.header div.login a {
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 10px auto;
+    background-color: #5865F2;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+div.header div.login a:hover {
+    background-color: #4752c5;
+    cursor: pointer;
+}
+
+div.header div.avatar img {
+    margin: 5px auto;
+    width: 45px;
+    clip-path: circle();
+}
+
+div.header div.user {
+    margin: auto 15px;
+}
+
+div.header div.user span.discriminator {
+    font-size: 0.7em;
+}
+
+div.header div.logout a {
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: #ED4245;
+    border-radius: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+div.header div.logout a:hover {
+    background-color: #a12d2e;
+    cursor: pointer;
+}
+
+div.guilds-header {
+    margin: 30px 30px 0 30px;
+    font-size: 20px;
+}
+
+div.guilds-header a {
+    color: #fff;
+    background-color: #5865F2;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
+
+div.guilds {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    height: fit-content;
+}
+
+a.guild {
+    color: #fff;
+    text-decoration: none;
+    background-color: #363940;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: fit-content;
+    text-align: center;
+    font-size: 20px;
+}
+
+a.guild:hover {
+    background-color: #4f535c;
+    cursor: pointer;
+}
+
+a.guild img {
+    width: 100px;
+    clip-path: circle();
+}

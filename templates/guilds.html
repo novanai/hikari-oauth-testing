@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Info
+        </title>
+        <link rel="stylesheet" href="./static/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="left title">
+                DASHBOARD | GUILDS
+            </div>
+            <div class="right">
+                <div class="avatar">
+                    <img src="{{ user.display_avatar_url }}">
+                </div>
+                <div class="user">
+                    {{ user.username }}<span class="discriminator">#{{ user.discriminator }}</span>
+                </div>
+                <div class="logout">
+                    <a href="./logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="guilds-header">
+            Choose a guild or <a href="#">add the bot to a guild</a>
+        </div>
+        <div class="guilds">
+            {% for guild in guilds %}
+                <a class="guild" href="/guild/{{ guild.id }}">
+                    <img src="{{ guild.icon_url or 'https://cdn.discordapp.com/embed/avatars/1.png' }}"><br>
+                    {{ guild.name.replace(" ", "<br>") | safe }}
+                </a>
+            {% endfor %}
+        </div>
+    </body>
+</html>
