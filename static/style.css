@@ -90,7 +90,11 @@ div.guilds-header a {
     padding: 5px 10px;
     border-radius: 10px;
     font-weight: bold;
+}
 
+div.guilds-header a:hover {
+    background-color: #4752c5;
+    cursor: pointer;
 }
 
 div.guilds {
