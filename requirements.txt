@@ -1,3 +1,4 @@
+git+https://github.com/tandemdude/lightbulb-ext-polaris
 hikari[speedups,server]>=2.0.0.dev110
 quart>=0.18.0
 python-dotenv>=0.20.0
