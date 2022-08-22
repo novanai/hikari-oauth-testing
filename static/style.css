@@ -125,3 +125,64 @@ a.guild img {
     width: 100px;
     clip-path: circle();
 }
+
+div.guild-settings {
+    margin: 25px;
+}
+
+div.guild-settings form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.guild-settings input {
+    background-color: #282b30;
+    color: #fff;
+    font-family: 'JetBrains Mono';
+    border: 2px solid #18191d;
+    padding: 3px 5px;
+    border-radius: 5px;
+    min-width: 500px;
+}
+
+div.guild-settings input[type="checkbox"] {
+    min-width: unset;
+}
+
+div.guild-settings select {
+    background-color: #282b30;
+    font-family: 'JetBrains Mono';
+    color: #fff;
+    border: 2px solid #18191d;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+div.guild-settings optgroup {
+    font-family: 'JetBrains Mono';
+    font-weight: bold;
+    font-style: normal;
+}
+
+div.guild-settings button {
+    font-size: 20px;
+    font-family: 'JetBrains Mono';
+    background-color: #5865F2;
+    width: min-content;
+    border: 2px solid #18191d;
+    border-radius: 5px;
+}
+
+div.guild-settings button:hover {
+    background-color: #4752c5;
+    cursor: pointer;
+}
+
+div.guild-settings img#thumbnail-preview {
+    max-width: 150px;
+}
+
+div.guild-settings img#image-preview {
+    max-width: 400px;
+}

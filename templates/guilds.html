@@ -13,13 +13,13 @@
             </div>
             <div class="right">
                 <div class="avatar">
-                    <img src="{{ user.display_avatar_url }}">
+                    <img src="{{ avatar }}">
                 </div>
                 <div class="user">
-                    {{ user.username }}<span class="discriminator">#{{ user.discriminator }}</span>
+                    {{ username }}<span class="discriminator">#{{ discriminator }}</span>
                 </div>
                 <div class="logout">
-                    <a href="./logout">Logout</a>
+                    <a href="/logout">Logout</a>
                 </div>
             </div>
         </div>

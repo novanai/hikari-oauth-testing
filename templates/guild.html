@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Info
+        </title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".preview").on("keyup", function() {
+                    $($(this).data("copy")).html($(this).val());
+                    var thumbnail = $("#thumbnail").val();
+                    $("#thumbnail-preview").attr("src", thumbnail);
+                    var image = $("#image").val();
+                    $("#image-preview").attr("src", image);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="left title">
+                DASHBOARD | {{ guild }}
+            </div>
+            <div class="right">
+                <div class="avatar">
+                    <img src="{{ avatar}}">
+                </div>
+                <div class="user">
+                    {{ username }}<span class="discriminator">#{{ discriminator }}</span>
+                </div>
+                <div class="logout">
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="guild-settings">
+             <form method="POST">
+                <label>Welcome Messages <input type="checkbox" name="message_enabled" {{ "checked" if settings.message_enabled == True }}></label>
+                
+                <label>Channel:
+                    <select name="channel">
+                        {% for cat in channels.keys() %}
+                            <optgroup label="{{ cat.upper() }}">
+                                {% for name, id_ in channels[cat].items() %}
+                                    <option value="{{ id_ }}" {{ "selected" if settings.channel_id == id_ }}># {{ name }}</option>
+                                {% endfor %}
+                            </optgroup>
+                        {% endfor %}
+                    </select>
+                </label>
+                <label>Message: <input type="text" name="message" value="{{ settings.message }}"/></label>
+                
+                <label>Embed <input type="checkbox" name="embed_enabled" {{ "checked" if settings.embed_enabled == True }}></label>
+                
+                <label>Title: <input type="text" name="title" value="{{ settings.title }}"></label>
+                <label>Description: <input type="text" name="description" value="{{ settings.description }}"></label>
+                <label>Colour: <input type="color" name="colour" value="{{ colour }}"></label>
+                <label>Thumbnail: <input class="preview" id="thumbnail" type="text" name="thumbnail" value="{{ settings.thumbnail }}"></label>
+                <label>Image: <input class="preview" id="image" type="text" name="image" value="{{ settings.image }}"></label>
+                
+                <label>Thumbnail Preview:<br><img src="{{ settings.thumbnail }}" id="thumbnail-preview"></label>
+                <label>Image Preview:<br><img src="{{ settings.image }}" id="image-preview"></label>
+                
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </body>
+</html>
