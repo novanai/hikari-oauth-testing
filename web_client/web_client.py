@@ -158,6 +158,8 @@ async def guild(guild_id: str):
 @app.route("/logout")
 async def logout():
     if session.get("token"):
+        async with rest.acquire(None) as r:
+            await r.revoke_access_token(int(CLIENT_ID), CLIENT_SECRET, session["token"])
         session.pop("token")
 
     return quart.redirect("/")
@@ -183,9 +185,3 @@ async def exchange_code(code: str) -> str:
         )
 
     return auth_token.access_token
-
-
-if __name__ == "__main__":
-    if os.name == "nt":
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    app.run(use_reloader=False, debug=True)

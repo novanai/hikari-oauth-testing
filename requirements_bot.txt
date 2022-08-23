@@ -1,0 +1,6 @@
+asyncpg>=0.26.0
+git+https://github.com/HyperGH/hikari-toolbox.git
+git+https://github.com/tandemdude/lightbulb-ext-polaris.git
+hikari[speedups]>=2.0.0.dev110
+hikari-lightbulb>=2.2.4
+python-dotenv>=0.20.0
